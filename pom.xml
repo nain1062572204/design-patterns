@@ -17,6 +17,7 @@
         <module>dynamic-proxy</module>
         <module>builder</module>
         <module>prototype-pattern</module>
+        <module>adapter-patterns</module>
     </modules>>
     <dependencies>
         <dependency>
