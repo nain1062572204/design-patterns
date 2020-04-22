@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.mbg.mapper.UserInfoPOMapper">
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="dno" jdbcType="INTEGER" property="dno" />
+    <result column="dnmae" jdbcType="VARCHAR" property="dnmae" />
+    <result column="loc" jdbcType="VARCHAR" property="loc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dno, dnmae, loc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept (dno, dnmae, loc
+      )
+    values (#{dno,jdbcType=INTEGER}, #{dnmae,jdbcType=VARCHAR}, #{loc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        dno,
+      </if>
+      <if test="dnmae != null">
+        dnmae,
+      </if>
+      <if test="loc != null">
+        loc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        #{dno,jdbcType=INTEGER},
+      </if>
+      <if test="dnmae != null">
+        #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        #{loc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    <set>
+      <if test="dnmae != null">
+        dnmae = #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        loc = #{loc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    set dnmae = #{dnmae,jdbcType=VARCHAR},
+      loc = #{loc,jdbcType=VARCHAR}
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="ename" jdbcType="VARCHAR" property="ename" />
+    <result column="job" jdbcType="VARCHAR" property="job" />
+    <result column="deptno" jdbcType="INTEGER" property="deptno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    eid, ename, job, deptno
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp (eid, ename, job, 
+      deptno)
+    values (#{eid,jdbcType=INTEGER}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
+      #{deptno,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="ename != null">
+        ename,
+      </if>
+      <if test="job != null">
+        job,
+      </if>
+      <if test="deptno != null">
+        deptno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        #{eid,jdbcType=INTEGER},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        #{deptno,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    <set>
+      <if test="ename != null">
+        ename = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        deptno = #{deptno,jdbcType=INTEGER},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    set ename = #{ename,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      deptno = #{deptno,jdbcType=INTEGER}
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="dno" jdbcType="INTEGER" property="dno" />
+    <result column="dnmae" jdbcType="VARCHAR" property="dnmae" />
+    <result column="loc" jdbcType="VARCHAR" property="loc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dno, dnmae, loc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept (dno, dnmae, loc
+      )
+    values (#{dno,jdbcType=INTEGER}, #{dnmae,jdbcType=VARCHAR}, #{loc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        dno,
+      </if>
+      <if test="dnmae != null">
+        dnmae,
+      </if>
+      <if test="loc != null">
+        loc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        #{dno,jdbcType=INTEGER},
+      </if>
+      <if test="dnmae != null">
+        #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        #{loc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    <set>
+      <if test="dnmae != null">
+        dnmae = #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        loc = #{loc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    set dnmae = #{dnmae,jdbcType=VARCHAR},
+      loc = #{loc,jdbcType=VARCHAR}
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="ename" jdbcType="VARCHAR" property="ename" />
+    <result column="job" jdbcType="VARCHAR" property="job" />
+    <result column="deptno" jdbcType="INTEGER" property="deptno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    eid, ename, job, deptno
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp (eid, ename, job, 
+      deptno)
+    values (#{eid,jdbcType=INTEGER}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
+      #{deptno,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="ename != null">
+        ename,
+      </if>
+      <if test="job != null">
+        job,
+      </if>
+      <if test="deptno != null">
+        deptno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        #{eid,jdbcType=INTEGER},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        #{deptno,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    <set>
+      <if test="ename != null">
+        ename = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        deptno = #{deptno,jdbcType=INTEGER},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    set ename = #{ename,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      deptno = #{deptno,jdbcType=INTEGER}
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="dno" jdbcType="INTEGER" property="dno" />
+    <result column="dnmae" jdbcType="VARCHAR" property="dnmae" />
+    <result column="loc" jdbcType="VARCHAR" property="loc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dno, dnmae, loc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept (dno, dnmae, loc
+      )
+    values (#{dno,jdbcType=INTEGER}, #{dnmae,jdbcType=VARCHAR}, #{loc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        dno,
+      </if>
+      <if test="dnmae != null">
+        dnmae,
+      </if>
+      <if test="loc != null">
+        loc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        #{dno,jdbcType=INTEGER},
+      </if>
+      <if test="dnmae != null">
+        #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        #{loc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    <set>
+      <if test="dnmae != null">
+        dnmae = #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        loc = #{loc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    set dnmae = #{dnmae,jdbcType=VARCHAR},
+      loc = #{loc,jdbcType=VARCHAR}
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="ename" jdbcType="VARCHAR" property="ename" />
+    <result column="job" jdbcType="VARCHAR" property="job" />
+    <result column="deptno" jdbcType="INTEGER" property="deptno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    eid, ename, job, deptno
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp (eid, ename, job, 
+      deptno)
+    values (#{eid,jdbcType=INTEGER}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
+      #{deptno,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="ename != null">
+        ename,
+      </if>
+      <if test="job != null">
+        job,
+      </if>
+      <if test="deptno != null">
+        deptno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        #{eid,jdbcType=INTEGER},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        #{deptno,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    <set>
+      <if test="ename != null">
+        ename = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        deptno = #{deptno,jdbcType=INTEGER},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    set ename = #{ename,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      deptno = #{deptno,jdbcType=INTEGER}
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="dno" jdbcType="INTEGER" property="dno" />
+    <result column="dnmae" jdbcType="VARCHAR" property="dnmae" />
+    <result column="loc" jdbcType="VARCHAR" property="loc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dno, dnmae, loc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dept
+    where dno = #{dno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept (dno, dnmae, loc
+      )
+    values (#{dno,jdbcType=INTEGER}, #{dnmae,jdbcType=VARCHAR}, #{loc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into dept
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        dno,
+      </if>
+      <if test="dnmae != null">
+        dnmae,
+      </if>
+      <if test="loc != null">
+        loc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dno != null">
+        #{dno,jdbcType=INTEGER},
+      </if>
+      <if test="dnmae != null">
+        #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        #{loc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    <set>
+      <if test="dnmae != null">
+        dnmae = #{dnmae,jdbcType=VARCHAR},
+      </if>
+      <if test="loc != null">
+        loc = #{loc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update dept
+    set dnmae = #{dnmae,jdbcType=VARCHAR},
+      loc = #{loc,jdbcType=VARCHAR}
+    where dno = #{dno,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wang.entity.UserInfoPO">
+    <id column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="ename" jdbcType="VARCHAR" property="ename" />
+    <result column="job" jdbcType="VARCHAR" property="job" />
+    <result column="deptno" jdbcType="INTEGER" property="deptno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    eid, ename, job, deptno
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from emp
+    where eid = #{eid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp (eid, ename, job, 
+      deptno)
+    values (#{eid,jdbcType=INTEGER}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
+      #{deptno,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wang.entity.UserInfoPO">
+    insert into emp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="ename != null">
+        ename,
+      </if>
+      <if test="job != null">
+        job,
+      </if>
+      <if test="deptno != null">
+        deptno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        #{eid,jdbcType=INTEGER},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        #{deptno,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    <set>
+      <if test="ename != null">
+        ename = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="deptno != null">
+        deptno = #{deptno,jdbcType=INTEGER},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wang.entity.UserInfoPO">
+    update emp
+    set ename = #{ename,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      deptno = #{deptno,jdbcType=INTEGER}
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+</mapper>
